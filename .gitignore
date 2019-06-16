@@ -1,0 +1,4 @@
+./clientDev/node_modules
+./serverDev/node_modules
+node_modules
+.tern-project

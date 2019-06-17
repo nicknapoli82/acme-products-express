@@ -35,7 +35,7 @@ module.exports = [{
     path.join(__dirname, 'src', 'index.js')
   ],
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'public/public'),
     filename: 'main.js'
   },
   devtool: 'source-map',

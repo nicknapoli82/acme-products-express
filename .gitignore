@@ -1,4 +1,5 @@
 ./clientDev/node_modules
+./clientDev/public/main.*
 ./serverDev/node_modules
 node_modules
 .tern-project

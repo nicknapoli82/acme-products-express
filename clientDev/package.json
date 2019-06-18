@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --open",
     "build-watch": "webpack --watch --mode development --config-name development",
-    "build-server": "webpack --mode development --config-name development",    
+    "build-server": "webpack --mode development --config-name development",
     "build": "webpack --mode production --config-name production"
   },
   "keywords": [],
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "querystring": "^0.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1"

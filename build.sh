@@ -26,16 +26,16 @@ fi
 
 if [ ! -f ./production/server.js ]; then
     cp -p ./serverDev/server/server.js ./production/server.js
-    echo "Created ./serverDev/server/server.js"    
+    echo "Created ./production/server.js"    
 elif [ ./serverDev/server/server.js -nt ./production/server.js ]; then
     cp -p ./serverDev/server/server.js ./production/server.js
-    echo "Found clientDev styles.css is Newer. Replaced in production"    
+    echo "Found clientDev server.js is Newer. Replaced in production"    
 fi
 
 if [ ! -f ./production/products.json ]; then
     cp -p ./serverDev/server/products.json ./production/products.json
-    echo "Created ./serverDev/server/products.json"    
+    echo "Created ./production/products.json"    
 elif [ ./serverDev/server/products.json -nt ./production/products.json ]; then
     cp -p ./serverDev/server/products.json ./production/products.json
-    echo "Found clientDev styles.css is Newer. Replaced in production"    
+    echo "Found clientDev products.json is Newer. Replaced in production"
 fi

@@ -30,8 +30,8 @@ app.get('/api/products', (req, res, next) => {
 app.post('/api/products', (req, res, next) => {
   let newProduct = { name: req.body.name };
   newProduct.id = seekID();
-  console.log(products);
-  console.log(newProduct);
+//  console.log(products);
+//  console.log(newProduct);
   products.push(newProduct);
   productsChangeLimit++;
   if(productsChangeLimit >= LIMIT) {

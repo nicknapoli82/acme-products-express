@@ -22,7 +22,6 @@ export default class CreateForm extends React.Component {
          .then(r => {
            if (r.status !== Number(201)) throw "Product creation failed";
            this.props.addProduct(r.data);
-           console.log(r);
          })
          .catch((e) => {
            console.log(e);

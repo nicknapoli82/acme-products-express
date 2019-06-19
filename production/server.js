@@ -5,7 +5,6 @@ const app = express();
 
 const root = path.join(__dirname);
 
-
 app.use(express.urlencoded({ extended: false }));
 
 let products;
@@ -30,8 +29,6 @@ app.get('/api/products', (req, res, next) => {
 app.post('/api/products', (req, res, next) => {
   let newProduct = { name: req.body.name };
   newProduct.id = seekID();
-//  console.log(products);
-//  console.log(newProduct);
   products.push(newProduct);
   productsChangeLimit++;
   if(productsChangeLimit >= LIMIT) {
@@ -58,6 +55,13 @@ app.delete('/api/products/:id', (req, res, next) => {
       .catch((e)=> console.log(e));
   }
   res.status(204).send('OK');
+});
+
+//Make sure that the products.json is correct when exit
+process.on("exit", () => {
+  writeFile('./products.json')
+    .then(productsChangeLimit = 0)
+    .catch((e)=> console.log(e));
 });
 
 app.listen(3000);
@@ -93,14 +97,14 @@ function writeFile(path) {
 }
 
 function seekID() {
-  let pArr = products.map((p)=> p.id).sort((a, b) => {
+  let pArr = products.map((p)=> Number(p.id)).sort((a, b) => {
     if (a < b) return -1;
     if (a > b) return 1;
     else return 0;
   });
-  let counter = 0;
+  let counter = 1;
   while (counter < pArr.length) {
-    if (counter in pArr) {
+    if (pArr.includes(counter)) {
       counter++;
       continue;
     }

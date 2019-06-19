@@ -1,0 +1,27 @@
+* ACME-Products-Express
+Learnining how to link the front end to the back end
+LETS DO THIS!!!
+
+** Notes to observer
+
+I broke this out into 3 sections. 
+    clientDev
+    serverDev
+    production
+
+clientDev is just the front end development
+In that folder there exists a shell script buildServer.sh
+buildServer.sh will transfer all the necessary files over to the serverDev space
+
+serverDev is the backend development space, it includes the clientDev files necessary in /public
+
+In the root directory there exists the shell script build.sh
+build.sh builds both client and server spaces and puts all necessary files in /production
+
+/production does not have express installed and is the only thing necessary to run the server.
+It is assumed that express is installed globally on the computer in this directory. If not npm install 
+it there in /production.
+
+Thanks. 
+
+Sorry for no style points. At least the functionality works though.
